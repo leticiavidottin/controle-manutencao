@@ -23,7 +23,7 @@ Registrar o início e fim de um serviço dentro de uma ordem de serviço.
 Validar se a ordem de serviço já foi finalizada antes de adicionar novos serviços.
 Atualizar a descrição do serviço realizado.
 Calcular o tempo total gasto no serviço.
-
+m
 📌 AcompanhamentoService
 Adicionar registros de acompanhamento à ordem de serviço (exemplo: "Aguardando peça").
 Permitir edição dos registros de acompanhamento antes do fechamento da ordem.
