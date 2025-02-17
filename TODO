@@ -1,0 +1,35 @@
+📌 ClienteService
+Criar um novo cliente garantindo que e-mails e telefones não sejam duplicados.
+Buscar um cliente pelo ID e retornar erro caso não exista.
+Atualizar os dados do cliente.
+Listar todos os clientes cadastrados.
+Deletar um cliente apenas se não houver ordens de serviço vinculadas.
+
+📌 EquipamentoService
+Cadastrar um novo equipamento vinculando-o a um cliente existente.
+Buscar equipamentos de um cliente específico.
+Atualizar dados do equipamento.
+Deletar um equipamento apenas se não houver ordens de serviço associadas.
+
+📌 OrdemServicoService
+Criar uma nova ordem de serviço associada a um cliente e equipamento.
+Buscar ordens de serviço em aberto e concluídas.
+Atualizar o status de uma ordem (exemplo: "Em andamento", "Concluído").
+Validar se uma ordem de serviço pode ser fechada (exemplo: precisa ter pelo menos um serviço registrado).
+Gerar um número único para cada ordem de serviço.
+
+📌 ServicoService
+Registrar o início e fim de um serviço dentro de uma ordem de serviço.
+Validar se a ordem de serviço já foi finalizada antes de adicionar novos serviços.
+Atualizar a descrição do serviço realizado.
+Calcular o tempo total gasto no serviço.
+
+📌 AcompanhamentoService
+Adicionar registros de acompanhamento à ordem de serviço (exemplo: "Aguardando peça").
+Permitir edição dos registros de acompanhamento antes do fechamento da ordem.
+Listar todos os acompanhamentos de uma ordem de serviço.
+
+🔹 Regras Gerais
+Evitar lógicas de negócio no controller: Todas as verificações, validações e regras de negócio devem estar na service.
+Tratar exceções: Se um item não for encontrado, lançar erro adequado para evitar problemas no frontend.
+Garantir integridade dos dados: Evitar a exclusão de registros que ainda tenham dependências.
