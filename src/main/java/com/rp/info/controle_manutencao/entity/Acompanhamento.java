@@ -1,4 +1,4 @@
-package com.example.controlemanutencao.entities;
+package com.rp.info.controle_manutencao.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
