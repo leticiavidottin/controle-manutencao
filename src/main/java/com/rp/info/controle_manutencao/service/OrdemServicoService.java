@@ -58,7 +58,7 @@ public class OrdemServicoService {
     
         ordemServico.setCliente(cliente);
         ordemServico.setEquipamento(equipamento);
-        ordemServico.setStatus("ABERTO");
+        ordemServico.setStatus("PENDENTE");
     
         ordemServico = ordemServicoRepository.save(ordemServico);
     
@@ -94,17 +94,21 @@ public class OrdemServicoService {
         return ordemServicoRepository.findAll();
     }
 
-    public Servico registrarServico(Long ordemServicoId, Servico servico) {
+    public OrdemServico finalizarServico(Long ordemServicoId) {
         Optional<OrdemServico> ordemServicoOpt = ordemServicoRepository.findById(ordemServicoId);
+        
         if (ordemServicoOpt.isPresent()) {
             OrdemServico ordemServico = ordemServicoOpt.get();
-            servico.setOrdemServico(ordemServico);
-            if (servico.getDataInicio() == null) {
-                servico.setDataInicio(LocalDate.now());
+            ordemServico.setStatus("CONCLUIDO");
+    
+            if (ordemServico.getDataTermino() == null) {
+                ordemServico.setDataTermino(LocalDate.now());
             }
-            servico.setDataTermino(LocalDate.now());
-            return servicoRepository.save(servico);
+    
+            return ordemServicoRepository.save(ordemServico); 
         }
+        
         throw new RuntimeException("Ordem de serviço não encontrada");
     }
+    
 }

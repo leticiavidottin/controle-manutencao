@@ -21,12 +21,6 @@ cd controle_manutencao
 
 ### 2. Executar a aplicação
 
-#### Usando Maven:
-
-```bash
-mvn spring-boot:run
-```
-
 #### Usando um IDE (IntelliJ, Eclipse, VS Code):
 
 - Execute a classe `ControleManutencaoApplication.java`
@@ -43,36 +37,7 @@ mvn spring-boot:run
 | PUT    | `/ordens/{id}` | Atualiza uma ordem existente     |
 | DELETE | `/ordens/{id}` | Remove uma ordem de serviço      |
 
-### Acompanhamento
-
-| Método | Rota                         | Descrição                          |
-| ------ | ---------------------------- | ---------------------------------- |
-| GET    | `/acompanhamentos/{ordemId}` | Lista acompanhamentos de uma ordem |
-| POST   | `/acompanhamentos/{ordemId}` | Adiciona um acompanhamento         |
-
 ## Exemplos de Uso
 
-### Criar uma Ordem de Serviço
-
-**Request (POST **``**)**
-
-```json
-{
-  "descricao": "Manutenção preventiva do equipamento X"
-}
-```
-
-### Adicionar um Acompanhamento
-
-**Request (POST **``**)**
-
-```json
-"Serviço interrompido por falta de peça. Aguardando reposição."
-```
-
-### Listar Acompanhamentos de uma Ordem
-
-**Request (GET **``**)**
-
-### *Collection Postman
-//todo
+Via Collection Postman anexada no projeto (todos com os dados necessários e em ordem de criação);
+O banco já contem dados de clientes e equipamentos para uso.

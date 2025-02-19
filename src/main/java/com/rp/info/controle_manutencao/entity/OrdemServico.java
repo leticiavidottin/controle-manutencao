@@ -5,6 +5,8 @@ import lombok.Data;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Data
 public class OrdemServico {
@@ -22,8 +24,10 @@ public class OrdemServico {
 
     private String status;
     private LocalDate dataAbertura;
+    private LocalDate dataTermino;
 
     @OneToMany(mappedBy = "ordemServico", cascade = CascadeType.ALL)
+    @JsonBackReference
     private List<Servico> servicos;
 
     @OneToMany(mappedBy = "ordemServico", cascade = CascadeType.ALL)

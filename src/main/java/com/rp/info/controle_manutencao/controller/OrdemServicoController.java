@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 
 import com.rp.info.controle_manutencao.dto.DadosCriacaoOrdemServicoDto;
 import com.rp.info.controle_manutencao.entity.OrdemServico;
-import com.rp.info.controle_manutencao.entity.Servico;
 import com.rp.info.controle_manutencao.service.OrdemServicoService;
 
 import java.util.List;
@@ -35,9 +34,9 @@ public class OrdemServicoController {
         return ResponseEntity.ok(ordensPendentes);
     }
 
-    @PutMapping("/{id}/servico")
-    public ResponseEntity<Servico> registrarServico(@PathVariable Long id, @RequestBody Servico servico) {
-        Servico servicoAtualizado = ordemServicoService.registrarServico(id, servico);
-        return ResponseEntity.ok(servicoAtualizado);
+    @PutMapping("/{id}/finalizar")
+    public ResponseEntity<OrdemServico> finalizarServico(@PathVariable Long id) {
+        OrdemServico servicoFinalizado = ordemServicoService.finalizarServico(id);
+        return ResponseEntity.ok(servicoFinalizado);
     }
 }
