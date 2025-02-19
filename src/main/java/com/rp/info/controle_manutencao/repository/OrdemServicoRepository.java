@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface OrdemServicoRepository extends JpaRepository<OrdemServico, Long> {
     List<OrdemServico> findByCliente(Cliente cliente);
+    List<OrdemServico> findByStatus(String status);
 }
