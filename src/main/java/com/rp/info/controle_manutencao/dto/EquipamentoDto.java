@@ -30,5 +30,5 @@ public class EquipamentoDto {
         equipamento.setMarca(this.marca);
         equipamento.setDescricao(this.descricao);
         return equipamento;
-    }
+    }    
 }

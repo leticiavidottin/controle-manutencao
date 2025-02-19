@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.rp.info.controle_manutencao.dto.DadosCriacaoOrdemServicoDto;
 import com.rp.info.controle_manutencao.entity.OrdemServico;
 import com.rp.info.controle_manutencao.entity.Servico;
 import com.rp.info.controle_manutencao.service.OrdemServicoService;
@@ -18,9 +19,14 @@ public class OrdemServicoController {
     private OrdemServicoService ordemServicoService;
 
     @PostMapping
-    public ResponseEntity<OrdemServico> criarOrdemServico(@RequestBody OrdemServico ordemServico) {
-        OrdemServico novaOrdem = ordemServicoService.criarOrdemServico(ordemServico);
-        return ResponseEntity.ok(novaOrdem);
+    public ResponseEntity<OrdemServico> criarOrdemServico(@RequestBody DadosCriacaoOrdemServicoDto dados) {
+        return ordemServicoService.criarOrdemServico(dados);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<OrdemServico>> listarOrdensServico() {
+        List<OrdemServico> ordensServico = ordemServicoService.listarOrdensServico();
+        return ResponseEntity.ok(ordensServico);
     }
 
     @GetMapping("/pendentes")

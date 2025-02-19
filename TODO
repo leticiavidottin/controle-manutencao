@@ -16,4 +16,10 @@ Requisitos não funcionais:
 3. Pode ser utilizada qualquer lib Java para auxiliar no desenvolvimento do projeto.
 4. Pode usar o h2 para manter os dados.
 
-//TODO:: arrumar loop de GET equipamentos
+//TODO: ajustar referência circular do GET OS
+
+criar requisições para OSController:
+    @GetMapping("/pendentes")
+    @PutMapping("/{id}/servico")
+
+ajustar documentação com endpoints de clientes e OS (listados nas requisições do Postman)
